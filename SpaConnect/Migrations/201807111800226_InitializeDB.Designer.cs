@@ -7,13 +7,13 @@ namespace SpaConnect.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddForeignKeys1 : IMigrationMetadata
+    public sealed partial class InitializeDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddForeignKeys1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitializeDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807100042287_AddForeignKeys1"; }
+            get { return "201807111800226_InitializeDB"; }
         }
         
         string IMigrationMetadata.Source

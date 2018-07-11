@@ -160,21 +160,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807072315249_InitializeDatabase.cs" />
-    <Compile Include="Migrations\201807072315249_InitializeDatabase.Designer.cs">
-      <DependentUpon>201807072315249_InitializeDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201807111800226_InitializeDB.cs" />
+    <Compile Include="Migrations\201807111800226_InitializeDB.Designer.cs">
+      <DependentUpon>201807111800226_InitializeDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807081218555_AddForeignKeys.cs" />
-    <Compile Include="Migrations\201807081218555_AddForeignKeys.Designer.cs">
-      <DependentUpon>201807081218555_AddForeignKeys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807100042287_AddForeignKeys1.cs" />
-    <Compile Include="Migrations\201807100042287_AddForeignKeys1.Designer.cs">
-      <DependentUpon>201807100042287_AddForeignKeys1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807100055068_AddForeignKeys2.cs" />
-    <Compile Include="Migrations\201807100055068_AddForeignKeys2.Designer.cs">
-      <DependentUpon>201807100055068_AddForeignKeys2.cs</DependentUpon>
+    <Compile Include="Migrations\201807111821164_Change.cs" />
+    <Compile Include="Migrations\201807111821164_Change.Designer.cs">
+      <DependentUpon>201807111821164_Change.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
@@ -183,7 +175,7 @@
     <Compile Include="Models\RouterDBContext.cs" />
     <Compile Include="Models\Step.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ProgramListVM.cs" />
+    <Compile Include="ViewModels\ProgramAssemblies.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-simplex.css" />
@@ -244,17 +236,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807072315249_InitializeDatabase.resx">
-      <DependentUpon>201807072315249_InitializeDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807111800226_InitializeDB.resx">
+      <DependentUpon>201807111800226_InitializeDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807081218555_AddForeignKeys.resx">
-      <DependentUpon>201807081218555_AddForeignKeys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807100042287_AddForeignKeys1.resx">
-      <DependentUpon>201807100042287_AddForeignKeys1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807100055068_AddForeignKeys2.resx">
-      <DependentUpon>201807100055068_AddForeignKeys2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807111821164_Change.resx">
+      <DependentUpon>201807111821164_Change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

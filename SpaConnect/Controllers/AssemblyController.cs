@@ -24,10 +24,7 @@ namespace SpaConnect.Controllers
         
         public ActionResult Details(int id)
         {
-            var assy = _context.assyDB.Single(a => a.assyID == id);
-
-            if (assy == null)
-                return HttpNotFound();
+            var assy = _context.assyDB.Include(a => a.program);
 
             return View(assy);
         }

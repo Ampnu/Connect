@@ -8,9 +8,10 @@ namespace SpaConnect.Models
 {
     public class Program
     {
-        [Key]
-        public int programID { get; set; }
-
+        public int ID { get; set; }
         public string programName { get; set; }
+
+        public List<Assy> Assemblies { get; set; }
+
     }
 }

@@ -22,12 +22,10 @@
         @foreach (var program in Model)
         {
         <tr>
-            <td>@Html.ActionLink(program.programName, "Details", "Assembly", new { id = program.programID }, null)</td>
+            <td>@Html.ActionLink(program.programName, "Details", "Assembly", new { id = program.ID }, null)</td>
         </tr>
         }
     </tbody>
 </table>
-
-}
 
 

@@ -6,8 +6,8 @@ using SpaConnect.Models;
 
 namespace SpaConnect.ViewModels
 {
-    public class ProgramListVM
+    public class ProgramAssemblies
     {
-        public List<Program> vmPrograms { get; set; }
+        public List<Assy> assyList { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace SpaConnect.Controllers
 
         public ActionResult Details(int id)
         {
-            var programs = _context.programDB.SingleOrDefault(c => c.programID == id);
+            var programs = _context.programDB.SingleOrDefault(p => p.ID == id);
 
             if (programs == null)
                 return HttpNotFound();

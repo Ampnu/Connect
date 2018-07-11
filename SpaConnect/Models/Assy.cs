@@ -10,9 +10,12 @@ namespace SpaConnect.Models
     public class Assy
     {
         [Key]
-        public int assyID { get; set; }
+        public int ID { get; set; }
         public string assyName { get; set; }
-        public Program program_FK { get; set; }
+
+        //nav property//
+        public int programID { get; set; }
+        public Program program { get; set; }
 
     }
 }

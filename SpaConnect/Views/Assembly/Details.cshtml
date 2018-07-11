@@ -1,4 +1,4 @@
-﻿@model SpaConnect.Models.Assy
+﻿@model IEnumerable<SpaConnect.Models.Assy>
 @*
     Note: I've set the model for this view to IEnumerable<Customer>.
     This is a simple interface implemented by the list class. Since
@@ -15,16 +15,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.assyName</h2>
+<h2>ASSEMBLIES</h2>
 
-@*<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover">
     <tbody>
         @foreach (var assy in Model)
         {
-            <tr>
-                <td>@assy.assyName</td>
-            </tr>
+            if(assy.program.ID == assy.programID)
+            {
+                <tr>
+                    <td>@assy.assyName</td>
+                    <td>@assy.program.programName</td>
+                    <td>@assy.programID</td>
+                </tr>
+            }        
         }
     </tbody>
-</table>*@
+</table>
 
