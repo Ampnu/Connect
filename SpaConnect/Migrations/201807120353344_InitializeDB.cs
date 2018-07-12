@@ -32,39 +32,40 @@ namespace SpaConnect.Migrations
                 "dbo.Operations",
                 c => new
                     {
-                        opID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         OPN = c.String(),
                         opTitle = c.String(),
                         opRev = c.String(),
-                        asmb_FK_ID = c.Int(),
+                        asmbID = c.Int(nullable: false),
+                        assembly_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.opID)
-                .ForeignKey("dbo.Assies", t => t.asmb_FK_ID)
-                .Index(t => t.asmb_FK_ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Assies", t => t.assembly_ID)
+                .Index(t => t.assembly_ID);
             
             CreateTable(
                 "dbo.Steps",
                 c => new
                     {
-                        stepID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         instructions = c.String(),
                         timeStart = c.Int(nullable: false),
                         timeEnd = c.Int(nullable: false),
-                        op_FK_opID = c.Int(),
+                        operationID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.stepID)
-                .ForeignKey("dbo.Operations", t => t.op_FK_opID)
-                .Index(t => t.op_FK_opID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Operations", t => t.operationID, cascadeDelete: true)
+                .Index(t => t.operationID);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Steps", "op_FK_opID", "dbo.Operations");
-            DropForeignKey("dbo.Operations", "asmb_FK_ID", "dbo.Assies");
+            DropForeignKey("dbo.Steps", "operationID", "dbo.Operations");
+            DropForeignKey("dbo.Operations", "assembly_ID", "dbo.Assies");
             DropForeignKey("dbo.Assies", "programID", "dbo.Programs");
-            DropIndex("dbo.Steps", new[] { "op_FK_opID" });
-            DropIndex("dbo.Operations", new[] { "asmb_FK_ID" });
+            DropIndex("dbo.Steps", new[] { "operationID" });
+            DropIndex("dbo.Operations", new[] { "assembly_ID" });
             DropIndex("dbo.Assies", new[] { "programID" });
             DropTable("dbo.Steps");
             DropTable("dbo.Operations");

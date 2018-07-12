@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SpaConnect.Models;
 using System.Data.Entity;
-
+using SpaConnect.Models;
 
 namespace SpaConnect.Controllers
 {
-    public class ProgramController : Controller
+    public class OperationController : Controller
     {
         private RouterDBContext _context;
 
-        public ProgramController()
+        public OperationController()
         {
             _context = new RouterDBContext();
         }
@@ -23,12 +22,11 @@ namespace SpaConnect.Controllers
             _context.Dispose();
         }
 
-        // GET: Program
-        public ActionResult Index()
+        public ActionResult Details(int id)
         {
-            List<Program> programs = _context.programDB.ToList();
+            var ops = _context.operationDB.Where(a => a.asmbID == id).ToList();
 
-          return View(programs);
+            return View(ops);
         }
     }
 }

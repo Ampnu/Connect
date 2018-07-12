@@ -156,17 +156,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssemblyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
+    <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807111800226_InitializeDB.cs" />
-    <Compile Include="Migrations\201807111800226_InitializeDB.Designer.cs">
-      <DependentUpon>201807111800226_InitializeDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807111821164_Change.cs" />
-    <Compile Include="Migrations\201807111821164_Change.Designer.cs">
-      <DependentUpon>201807111821164_Change.cs</DependentUpon>
+    <Compile Include="Migrations\201807120353344_InitializeDB.cs" />
+    <Compile Include="Migrations\201807120353344_InitializeDB.Designer.cs">
+      <DependentUpon>201807120353344_InitializeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
@@ -218,6 +216,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Program\Index.cshtml" />
     <Content Include="Views\Assembly\Details.cshtml" />
+    <Content Include="Views\Operation\Details.cshtml" />
+    <Content Include="Views\Step\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -236,11 +236,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807111800226_InitializeDB.resx">
-      <DependentUpon>201807111800226_InitializeDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807111821164_Change.resx">
-      <DependentUpon>201807111821164_Change.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807120353344_InitializeDB.resx">
+      <DependentUpon>201807120353344_InitializeDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
