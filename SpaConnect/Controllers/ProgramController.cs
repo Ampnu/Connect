@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using SpaConnect.Models;
 using System.Data.Entity;
 
-
 namespace SpaConnect.Controllers
 {
     public class ProgramController : Controller
@@ -26,9 +25,20 @@ namespace SpaConnect.Controllers
         // GET: Program
         public ActionResult Index()
         {
-            List<Program> programs = _context.programDB.ToList();
+            var programs = _context.programDB.ToList();
 
           return View(programs);
         }
+
+        public ActionResult Details(int id)
+        {
+            var programs = _context.programDB.SingleOrDefault(p => p.ID == id);
+
+            if (programs == null)
+                return HttpNotFound();
+
+            return View(programs);
+        }
+
     }
 }

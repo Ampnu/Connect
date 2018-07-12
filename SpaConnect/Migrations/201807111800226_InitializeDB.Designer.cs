@@ -13,7 +13,7 @@ namespace SpaConnect.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201807120353344_InitializeDB"; }
+            get { return "201807111800226_InitializeDB"; }
         }
         
         string IMigrationMetadata.Source

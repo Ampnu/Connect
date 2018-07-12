@@ -9,13 +9,10 @@ namespace SpaConnect.Models
     public class Operation
     {
         [Key]
-        public int ID { get; set; }
+        public int opID { get; set; }
         public string OPN { get; set; }
         public string opTitle { get; set; }
         public string opRev { get; set; }
-
-        //nav property//
-        public int asmbID { get; set; }
-        public Assy assembly { get; set; }
+        public Assy asmb_FK { get; set; }
     }
 }
