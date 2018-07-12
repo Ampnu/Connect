@@ -4,16 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SpaConnect.Models;
-using System.Data.Entity;
-
 
 namespace SpaConnect.Controllers
 {
-    public class ProgramController : Controller
+    public class StepController : Controller
     {
         private RouterDBContext _context;
 
-        public ProgramController()
+        public StepController()
         {
             _context = new RouterDBContext();
         }
@@ -23,12 +21,11 @@ namespace SpaConnect.Controllers
             _context.Dispose();
         }
 
-        // GET: Program
-        public ActionResult Index()
+        public ActionResult Details(int id)
         {
-            List<Program> programs = _context.programDB.ToList();
+            var step = _context.stepDB.Where(a => a.operationID == id).ToList();
 
-          return View(programs);
+            return View(step);
         }
     }
 }
