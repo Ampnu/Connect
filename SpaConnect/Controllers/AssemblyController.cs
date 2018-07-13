@@ -29,5 +29,19 @@ namespace SpaConnect.Controllers
 
             return View(assy);
         }
+
+        public ActionResult New()
+        {
+            List<Program> programs = _context.programDB.ToList();
+
+            var viewModel = new NewAssyVM
+            {
+                programsVM = programs
+            };
+
+            return View(viewModel);
+        }
+
+
     }
 }

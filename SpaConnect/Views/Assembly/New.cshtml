@@ -1,0 +1,21 @@
+﻿@model SpaConnect.ViewModels.NewAssyVM
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create New Assembly</h2>
+
+@using (Html.BeginForm("Create", "Assembly"))
+{ 
+    <div class="form-group">
+        <label for="assyName">New Assembly</label>
+        @Html.TextAreaFor(a => a.asmbVM.assyName, new {@class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @*<label for="asmbVM.program">Select Program</label>*@
+        @Html.DropDownListFor(a => a.asmbVM.program, new SelectList(Model.programsVM,"ID", "programName"),"Select Program", new {@class = "form-control"})
+    </div>
+}
+
