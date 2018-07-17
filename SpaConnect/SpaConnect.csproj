@@ -173,6 +173,7 @@
     <Compile Include="Models\RouterDBContext.cs" />
     <Compile Include="Models\Step.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\NewProgramVM.cs" />
     <Compile Include="ViewModels\NewAssyVM.cs" />
     <Compile Include="ViewModels\ProgramAssemblies.cs" />
   </ItemGroup>
@@ -223,6 +224,7 @@
     <Content Include="Views\Operation\Details.cshtml" />
     <Content Include="Views\Step\Details.cshtml" />
     <Content Include="Views\Assembly\New.cshtml" />
+    <Content Include="Views\Program\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

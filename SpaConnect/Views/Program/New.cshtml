@@ -1,0 +1,19 @@
+﻿@model SpaConnect.Models.Program
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Program</h2>
+
+@using (Html.BeginForm("Create", "Program"))
+{
+    <div class="form-group">
+        <label for="programName">New Program</label>
+        @Html.TextAreaFor(m => m.programName, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.ID);
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

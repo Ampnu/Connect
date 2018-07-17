@@ -32,16 +32,30 @@ namespace SpaConnect.Controllers
 
         public ActionResult New()
         {
-            List<Program> programs = _context.programDB.ToList();
+            List<Program> programID = _context.programDB.ToList();
 
             var viewModel = new NewAssyVM
             {
-                programsVM = programs
+                programsIDVM = programID
             };
 
             return View(viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Create(Assy assy )
+        {
+            if (assy.programID == 0)
+            {
+                _context.assyDB.Add(assy); //adding object to the database
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+            _context.SaveChanges();
 
+            return RedirectToAction("Index", "Program");
+        }
     }
 }

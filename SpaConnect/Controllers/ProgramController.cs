@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SpaConnect.Models;
 using System.Data.Entity;
+using SpaConnect.ViewModels;
 
 
 namespace SpaConnect.Controllers
@@ -29,6 +30,28 @@ namespace SpaConnect.Controllers
             List<Program> programs = _context.programDB.ToList();
 
           return View(programs);
+        }
+
+        public ActionResult New()
+        {
+        
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Program program)
+        {
+            if(program.ID == 0)
+            {
+                _context.programDB.Add(program); //adding object to the database
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Program");
         }
     }
 }

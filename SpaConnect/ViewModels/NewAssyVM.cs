@@ -8,7 +8,7 @@ namespace SpaConnect.ViewModels
 {
     public class NewAssyVM
     {
-        public IEnumerable<Program> programsVM { get; set; }
-        public Assy asmbVM { get; set; }
+        public IEnumerable<Program> programsIDVM { get; set; } //list for dropdown box
+        public Assy asmbVM { get; set; } //access to assembly model variables
     }
 }
