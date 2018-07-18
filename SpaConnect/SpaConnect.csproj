@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201807120353344_InitializeDB.Designer.cs">
       <DependentUpon>201807120353344_InitializeDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807180131566_RemovedVariables.cs" />
+    <Compile Include="Migrations\201807180131566_RemovedVariables.Designer.cs">
+      <DependentUpon>201807180131566_RemovedVariables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
     <Compile Include="Models\Operation.cs" />
@@ -225,6 +229,8 @@
     <Content Include="Views\Step\Details.cshtml" />
     <Content Include="Views\Assembly\New.cshtml" />
     <Content Include="Views\Program\New.cshtml" />
+    <Content Include="Views\Operation\New.cshtml" />
+    <Content Include="Views\Operation\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -245,6 +251,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807120353344_InitializeDB.resx">
       <DependentUpon>201807120353344_InitializeDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180131566_RemovedVariables.resx">
+      <DependentUpon>201807180131566_RemovedVariables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

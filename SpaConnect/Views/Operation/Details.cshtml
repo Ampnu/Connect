@@ -22,7 +22,6 @@
         <tr>
             <th>OPN</th>
             <th>OPERATION</th>
-            <th>REVISION</th>
         </tr>
     </thead>  
     <tbody>
@@ -31,9 +30,10 @@
         <tr>
             <td>@val.OPN</td>
             <td>@Html.ActionLink(val.opTitle, "Details", "Step", new { id = val.ID }, null)</td>
-            <td>@val.opRev</td>
         </tr>
         }
     </tbody>
 </table>
+
+<button type="button" class="nav">@Html.ActionLink("Create New OPN", "New", "Operation")</button>
 

@@ -28,5 +28,26 @@ namespace SpaConnect.Controllers
 
             return View(ops);
         }
+
+        public ActionResult New()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Operation op)
+        {
+            _context.operationDB.Add(op); //adding object to the database
+            _context.SaveChanges();
+
+            return RedirectToAction("Result", "Operation");
+        }
+
+        public ActionResult Result()
+        {
+
+            return View();
+        }
     }
 }

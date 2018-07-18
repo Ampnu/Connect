@@ -41,16 +41,9 @@ namespace SpaConnect.Controllers
         [HttpPost]
         public ActionResult Create(Program program)
         {
-            if(program.ID == 0)
-            {
-                _context.programDB.Add(program); //adding object to the database
-            }
-            else
-            {
-                return HttpNotFound();
-            }
+            _context.programDB.Add(program); //adding object to the database
             _context.SaveChanges();
-
+           
             return RedirectToAction("Index", "Program");
         }
     }

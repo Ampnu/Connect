@@ -43,18 +43,10 @@ namespace SpaConnect.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Assy assy )
+        public ActionResult Create(NewAssyVM asmb)
         {
-            if (assy.programID == 0)
-            {
-                _context.assyDB.Add(assy); //adding object to the database
-            }
-            else
-            {
-                return HttpNotFound();
-            }
+            _context.assyDB.Add(asmb.asmbVM); //adding object to the database
             _context.SaveChanges();
-
             return RedirectToAction("Index", "Program");
         }
     }

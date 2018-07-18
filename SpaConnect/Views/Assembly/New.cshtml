@@ -15,17 +15,11 @@
         @Html.TextAreaFor(m => m.asmbVM.assyName, new { @class = "form-control" }) @*storing input from text field into destinated va*@
     </div>
 
-    <div>
-        <p>Program Codes:</p>
-        <p>1 - Q125</p>
-        <p>2 - NUAMP</p>
-    </div>
-
     <div class="form-group">
-            @Html.DropDownListFor(m => m.asmbVM.programID, new SelectList(Model.programsIDVM, "ID", "programID"), "Select Program Code", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.asmbVM.programID, new SelectList(Model.programsIDVM, "ID", "programName"), "Select Program", new { @class = "form-control" })
         </div>
 
-    @Html.HiddenFor(m => m.asmbVM.ID);
+    @*@Html.HiddenFor(m => m.asmbVM.ID);*@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 }

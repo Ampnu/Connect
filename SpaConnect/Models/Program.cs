@@ -11,7 +11,7 @@ namespace SpaConnect.Models
         public int ID { get; set; }
         public string programName { get; set; }
 
-        public List<Assy> Assemblies { get; set; }
+        //public List<Assy> Assemblies { get; set; }
 
     }
 }

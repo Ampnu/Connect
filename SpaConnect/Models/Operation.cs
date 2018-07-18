@@ -12,7 +12,7 @@ namespace SpaConnect.Models
         public int ID { get; set; }
         public string OPN { get; set; }
         public string opTitle { get; set; }
-        public string opRev { get; set; }
+        //public string opRev { get; set; }
 
         //nav property//
         public int asmbID { get; set; }
