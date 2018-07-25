@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using SpaConnect.Models;
+using SpaConnect.ViewModels;
 
 namespace SpaConnect.Controllers
 {
@@ -24,24 +25,29 @@ namespace SpaConnect.Controllers
 
         public ActionResult Details(int id)
         {
-            var ops = _context.operationDB.Where(a => a.asmbID == id).ToList();
+            List<Operation> ops = _context.operationDB.Include(m => m.assembly).Where(a => a.asmbID == id).ToList();
 
             return View(ops);
         }
 
-        public ActionResult New()
+        public ActionResult New(int id)
         {
+            List<Assy> asmbID = _context.assyDB.Where(m => m.ID == id).ToList(); //retriving list of assemblies for the DB
 
-            return View();
+            var viewModel = new NewAssetVM
+            {
+                asmbIDVM = asmbID // storing the list in the new assemblies list
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(Operation op)
+        public ActionResult Create(NewAssetVM op)
         {
-            _context.operationDB.Add(op); //adding object to the database
+            _context.operationDB.Add(op.opVM); //adding object to the database
             _context.SaveChanges();
-
-            return RedirectToAction("Result", "Operation");
+            return RedirectToAction("Details", "Operation", new { id = op.opVM.asmbID });
         }
 
         public ActionResult Result()

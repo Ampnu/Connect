@@ -22,32 +22,33 @@ namespace SpaConnect.Controllers
         {
             _context.Dispose();
         }
-        
+
         public ActionResult Details(int id)
         {
-            var assy = _context.assyDB.Where(a => a.programID == id).ToList();
+            List<Assy> assy = _context.assyDB.Where(a => a.programID == id).ToList();
 
             return View(assy);
         }
 
         public ActionResult New()
         {
-            List<Program> programID = _context.programDB.ToList();
+            List<Program> programID = _context.programDB.ToList(); //retriving list of programs for the DB
 
-            var viewModel = new NewAssyVM
+            var viewModel = new NewAssetVM
             {
-                programsIDVM = programID
+                programsIDVM = programID //storing the list in the a new program list
             };
 
             return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(NewAssyVM asmb)
+        public ActionResult Create(NewAssetVM asmb)
         {
             _context.assyDB.Add(asmb.asmbVM); //adding object to the database
             _context.SaveChanges();
-            return RedirectToAction("Index", "Program");
+            return RedirectToAction("Details", "Assembly", new { id = asmb.asmbVM.programID });
+            //return RedirectToAction("Index", "Program");
         }
     }
 }

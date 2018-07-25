@@ -33,8 +33,7 @@ namespace SpaConnect.Controllers
         }
 
         public ActionResult New()
-        {
-        
+        {        
             return View();
         }
 
@@ -43,7 +42,6 @@ namespace SpaConnect.Controllers
         {
             _context.programDB.Add(program); //adding object to the database
             _context.SaveChanges();
-           
             return RedirectToAction("Index", "Program");
         }
     }

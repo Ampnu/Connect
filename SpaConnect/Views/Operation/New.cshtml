@@ -1,4 +1,5 @@
-﻿@model SpaConnect.Models.Operation
+﻿@*Access to VM variables*@
+@model SpaConnect.ViewModels.NewAssetVM
 @{
     /**/
 
@@ -12,12 +13,17 @@
 {
     <div class="form-group">
         <label for="OPN">New OPN</label>
-        @Html.TextAreaFor(m => m.OPN, new { @class = "form-control" }) @*storing input from text field into destinated variable*@
+        @Html.TextAreaFor(m => m.opVM.OPN, new { @class = "form-control" }) @*sets OPN number*@
     </div>
 
     <div class="form-group">
         <label for="opTitle">New OPN Title</label>
-        @Html.TextAreaFor(m => m.opTitle, new { @class = "form-control" }) 
+        @Html.TextAreaFor(m => m.opVM.opTitle, new { @class = "form-control" }) @*sets OPN title*@
+    </div>
+
+    @*sets the operation to an assembly from *@
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.opVM.asmbID, new SelectList(Model.asmbIDVM, "ID", "assyName"), "Select Assembly", new { @class = "form-control" })
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

@@ -22,18 +22,21 @@
         <tr>
             <th>OPN</th>
             <th>OPERATION</th>
+            <th>MODIFY</th>
         </tr>
-    </thead>  
+    </thead>
     <tbody>
         @foreach (var val in Model)
         {
         <tr>
             <td>@val.OPN</td>
             <td>@Html.ActionLink(val.opTitle, "Details", "Step", new { id = val.ID }, null)</td>
+            <td>@Html.ActionLink("Create New Operation", "New", "Operation", new { id = val.asmbID }, null)</td>
         </tr>
         }
     </tbody>
 </table>
 
-<button type="button" class="nav">@Html.ActionLink("Create New OPN", "New", "Operation")</button>
+
+<div>@Html.ActionLink("Create New Operation", "New", "Operation")</div>
 

@@ -40,8 +40,8 @@ namespace SpaConnect.Migrations
                         assembly_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Assies", t => t.assembly_ID)
-                .Index(t => t.assembly_ID);
+                .ForeignKey("dbo.Assies", t => t.asmbID)
+                .Index(t => t.asmbID);
             
             CreateTable(
                 "dbo.Steps",

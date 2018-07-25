@@ -170,6 +170,18 @@
     <Compile Include="Migrations\201807180131566_RemovedVariables.Designer.cs">
       <DependentUpon>201807180131566_RemovedVariables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807190228052_RemoveAsssemblyDB.cs" />
+    <Compile Include="Migrations\201807190228052_RemoveAsssemblyDB.Designer.cs">
+      <DependentUpon>201807190228052_RemoveAsssemblyDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807190236371_RemoveOpForeignKey.cs" />
+    <Compile Include="Migrations\201807190236371_RemoveOpForeignKey.Designer.cs">
+      <DependentUpon>201807190236371_RemoveOpForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807190238345_AddOpForeignKey.cs" />
+    <Compile Include="Migrations\201807190238345_AddOpForeignKey.Designer.cs">
+      <DependentUpon>201807190238345_AddOpForeignKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
     <Compile Include="Models\Operation.cs" />
@@ -178,7 +190,7 @@
     <Compile Include="Models\Step.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\NewProgramVM.cs" />
-    <Compile Include="ViewModels\NewAssyVM.cs" />
+    <Compile Include="ViewModels\NewAssetVM.cs" />
     <Compile Include="ViewModels\ProgramAssemblies.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +266,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807180131566_RemovedVariables.resx">
       <DependentUpon>201807180131566_RemovedVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190228052_RemoveAsssemblyDB.resx">
+      <DependentUpon>201807190228052_RemoveAsssemblyDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190236371_RemoveOpForeignKey.resx">
+      <DependentUpon>201807190236371_RemoveOpForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190238345_AddOpForeignKey.resx">
+      <DependentUpon>201807190238345_AddOpForeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

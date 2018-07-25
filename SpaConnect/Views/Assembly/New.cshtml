@@ -1,4 +1,5 @@
-﻿@model SpaConnect.ViewModels.NewAssyVM
+﻿@*Access to VM variables*@
+@model SpaConnect.ViewModels.NewAssetVM
 @{
     /**/
 
@@ -12,14 +13,14 @@
 {
     <div class="form-group">
         <label for="asmbVM.assyName">New Assembly</label>
-        @Html.TextAreaFor(m => m.asmbVM.assyName, new { @class = "form-control" }) @*storing input from text field into destinated va*@
+        @Html.TextAreaFor(m => m.asmbVM.assyName, new { @class = "form-control" }) @*storing input from text field into destinated va**@
     </div>
 
     <div class="form-group">
-            @Html.DropDownListFor(m => m.asmbVM.programID, new SelectList(Model.programsIDVM, "ID", "programName"), "Select Program", new { @class = "form-control" })
-        </div>
+        @Html.DropDownListFor(m => m.asmbVM.programID, new SelectList(Model.programsIDVM, "ID", "programName"), "Select Program", new { @class = "form-control" })
+    </div>
 
-    @*@Html.HiddenFor(m => m.asmbVM.ID);*@
+    @Html.HiddenFor(m => m.asmbVM.ID);
 
     <button type="submit" class="btn btn-primary">Submit</button>
 }
