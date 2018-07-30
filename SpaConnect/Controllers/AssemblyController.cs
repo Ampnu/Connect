@@ -23,6 +23,20 @@ namespace SpaConnect.Controllers
             _context.Dispose();
         }
 
+        public ActionResult Index(int id)
+        {
+            List<Assy> assyID = _context.assyDB.ToList();
+
+            foreach (var val in assyID)
+            {
+                if (id == val.programID)
+                {
+                    return RedirectToAction("Details", "Assembly", new { id = id });
+                }
+            }
+            return RedirectToAction("New", "Assembly", new { id = id });
+        }
+
         public ActionResult Details(int id)
         {
             List<Assy> assy = _context.assyDB.Where(a => a.programID == id).ToList();

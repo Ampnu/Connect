@@ -8,10 +8,10 @@
 
 @using (Html.BeginForm("Create", "Program"))
 {
-    <div class="form-group">
-        <label for="programName">New Program</label>
-        @Html.TextAreaFor(m => m.programName, new { @class = "form-control" })
-    </div>
+<div class="form-group">
+    <label for="programName">New Program</label>
+    @Html.TextAreaFor(m => m.programName, new { @class = "form-control" })
+</div>
 
     @Html.HiddenFor(m => m.ID);
 

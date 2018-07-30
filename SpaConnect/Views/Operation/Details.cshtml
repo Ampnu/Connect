@@ -28,15 +28,19 @@
     <tbody>
         @foreach (var val in Model)
         {
-        <tr>
-            <td>@val.OPN</td>
-            <td>@Html.ActionLink(val.opTitle, "Details", "Step", new { id = val.ID }, null)</td>
-            <td>@Html.ActionLink("Create New Operation", "New", "Operation", new { id = val.asmbID }, null)</td>
-        </tr>
+            <tr>
+                <td>@val.OPN</td>
+                <td>@Html.ActionLink(val.opTitle, "Index", "Step", new { id = val.ID }, null)</td>
+                <td>
+                    @Html.ActionLink("New", "New", "Operation", new { id = val.asmbID }, null)
+                    @Html.ActionLink("Edit", "Result", "Operation", new { id = val.asmbID }, null)
+                    @Html.ActionLink("Delete", "Result", "Operation", new { id = val.asmbID }, null)
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 
 
-<div>@Html.ActionLink("Create New Operation", "New", "Operation")</div>
+
 

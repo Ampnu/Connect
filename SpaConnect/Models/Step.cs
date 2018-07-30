@@ -11,8 +11,7 @@ namespace SpaConnect.Models
         [Key]
         public int ID { get; set; }
         public string instructions { get; set; }
-        //public int timeStart { get; set; }
-        //public int timeEnd { get; set; }
+
 
         //nav property//
         public int operationID { get; set; }

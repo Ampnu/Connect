@@ -32,6 +32,12 @@ namespace SpaConnect.Controllers
           return View(programs);
         }
 
+        public ActionResult Display()
+        {
+
+            return View();
+        }
+
         public ActionResult New()
         {        
             return View();

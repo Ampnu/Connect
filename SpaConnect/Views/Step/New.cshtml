@@ -1,0 +1,22 @@
+﻿@model SpaConnect.ViewModels.NewAssetVM
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+@using (Html.BeginForm("Create", "Step"))
+{
+    <div class="form-group">
+        <label for="Step">New Step</label>
+        @Html.TextAreaFor(m => m.stepVM.instructions, new { @class = "form-control" }) @*store new step into DB*@
+    </div>
+
+    @*sets the operation to an assembly from *@
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.stepVM.operationID, new SelectList(Model.opsIDVM, "ID", "opTitle"), "Select Operation", new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+

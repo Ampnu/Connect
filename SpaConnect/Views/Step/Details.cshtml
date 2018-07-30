@@ -1,4 +1,5 @@
-﻿@model IEnumerable<SpaConnect.Models.Step>
+﻿@*@model IEnumerable<SpaConnect.Models.Step>*@
+@model SpaConnect.ViewModels.NewAssetVM
 @*
     Note: I've set the model for this view to IEnumerable<Customer>.
     This is a simple interface implemented by the list class. Since
@@ -13,9 +14,61 @@
 @{
     ViewBag.Title = "INSTRUCTIONS";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int numb = 0;
 }
 
-<h2>INSTRUCTIONS</h2>
+@foreach (var val in Model.utilIDVM)
+{
+    <h2>OPN @val.OPN @val.opTitle</h2>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>LESSON PLAN</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var val in Model.utilIDVM)
+        {
+            <tr>
+                <td>@val.lessonPlan</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>TOOLS/EQUIPMENT</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var val in Model.utilIDVM)
+        {
+            <tr>
+                <td>@val.tools</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>GENERAL NOTES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var val in Model.utilIDVM)
+        {
+            <tr>
+                <td>@val.generalNotes</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 <table class="table table-bordered">
     <thead>
@@ -25,10 +78,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var val in Model)
+        @foreach (var val in Model.stepIDVM)
         {
+            numb = numb+1;
             <tr>
-                <td>@val.ID</td>
+                <td>@numb</td>
                 <td>@val.instructions</td>
             </tr>
         }

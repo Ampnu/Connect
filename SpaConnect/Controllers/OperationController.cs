@@ -23,9 +23,23 @@ namespace SpaConnect.Controllers
             _context.Dispose();
         }
 
+        public ActionResult Index(int id)
+        {
+            List<Operation> opsID = _context.operationDB.ToList();
+
+            foreach (var val in opsID)
+            {
+                if (id == val.asmbID)
+                {
+                    return RedirectToAction("Details", "Operation", new { id = id });
+                }  
+            }
+            return RedirectToAction("New", "Operation", new { id = id });
+        }
+
         public ActionResult Details(int id)
         {
-            List<Operation> ops = _context.operationDB.Include(m => m.assembly).Where(a => a.asmbID == id).ToList();
+            List<Operation> ops = _context.operationDB.Where(a => a.asmbID == id).ToList();
 
             return View(ops);
         }

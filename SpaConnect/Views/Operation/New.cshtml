@@ -3,6 +3,8 @@
 @{
     /**/
 
+    /**/
+
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -21,6 +23,21 @@
         @Html.TextAreaFor(m => m.opVM.opTitle, new { @class = "form-control" }) @*sets OPN title*@
     </div>
 
+    <div class="form-group">
+        <label for="lessonPlan">Add Lesson Plans</label>
+        @Html.TextAreaFor(m => m.opVM.lessonPlan, new { @class = "form-control" }) @*sets OPN title*@
+    </div>
+
+    <div class="form-group">
+        <label for="tools">Add Tools/Equiptment</label>
+        @Html.TextAreaFor(m => m.opVM.tools, new { @class = "form-control" }) @*sets OPN title*@
+    </div>
+
+    <div class="form-group">
+        <label for="generalNotes">Add General Notes</label>
+        @Html.TextAreaFor(m => m.opVM.generalNotes, new { @class = "form-control" }) @*sets OPN title*@
+    </div>
+
     @*sets the operation to an assembly from *@
     <div class="form-group">
         @Html.DropDownListFor(m => m.opVM.asmbID, new SelectList(Model.asmbIDVM, "ID", "assyName"), "Select Assembly", new { @class = "form-control" })
@@ -28,4 +45,3 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 }
-

@@ -182,6 +182,18 @@
     <Compile Include="Migrations\201807190238345_AddOpForeignKey.Designer.cs">
       <DependentUpon>201807190238345_AddOpForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807300355128_AddedNewStepVars.cs" />
+    <Compile Include="Migrations\201807300355128_AddedNewStepVars.Designer.cs">
+      <DependentUpon>201807300355128_AddedNewStepVars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807300358057_AddNewStepVars.cs" />
+    <Compile Include="Migrations\201807300358057_AddNewStepVars.Designer.cs">
+      <DependentUpon>201807300358057_AddNewStepVars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807300419479_AddNewOpVars.cs" />
+    <Compile Include="Migrations\201807300419479_AddNewOpVars.Designer.cs">
+      <DependentUpon>201807300419479_AddNewOpVars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
     <Compile Include="Models\Operation.cs" />
@@ -241,8 +253,12 @@
     <Content Include="Views\Step\Details.cshtml" />
     <Content Include="Views\Assembly\New.cshtml" />
     <Content Include="Views\Program\New.cshtml" />
-    <Content Include="Views\Operation\New.cshtml" />
     <Content Include="Views\Operation\Result.cshtml" />
+    <Content Include="Views\Program\Display.cshtml" />
+    <Content Include="Views\Operation\Index.cshtml" />
+    <Content Include="Views\Operation\New.cshtml" />
+    <Content Include="Views\Step\Index.cshtml" />
+    <Content Include="Views\Step\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +291,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807190238345_AddOpForeignKey.resx">
       <DependentUpon>201807190238345_AddOpForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807300355128_AddedNewStepVars.resx">
+      <DependentUpon>201807300355128_AddedNewStepVars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807300358057_AddNewStepVars.resx">
+      <DependentUpon>201807300358057_AddNewStepVars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807300419479_AddNewOpVars.resx">
+      <DependentUpon>201807300419479_AddNewOpVars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
