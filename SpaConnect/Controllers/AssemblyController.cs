@@ -44,9 +44,9 @@ namespace SpaConnect.Controllers
             return View(assy);
         }
 
-        public ActionResult New()
+        public ActionResult New(int id)
         {
-            List<Program> programID = _context.programDB.ToList(); //retriving list of programs for the DB
+            List<Program> programID = _context.programDB.Where(m=>m.ID == id).ToList(); //retriving program for the DB
 
             var viewModel = new NewAssetVM
             {

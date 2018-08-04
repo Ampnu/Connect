@@ -7,13 +7,13 @@ namespace SpaConnect.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class RemoveAsssemblyDB : IMigrationMetadata
+    public sealed partial class InitializeDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveAsssemblyDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitializeDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807190228052_RemoveAsssemblyDB"; }
+            get { return "201808010259554_InitializeDB"; }
         }
         
         string IMigrationMetadata.Source

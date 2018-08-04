@@ -8,7 +8,7 @@ namespace SpaConnect.ViewModels
 {
     public class NewProgramVM
     {
-        public IEnumerable<Program> programsVM { get; set; }
-        public Program programVM { get; set; }
+        //public IEnumerable<Program> programsVM { get; set; }
+        //public Program programVM { get; set; }
     }
 }

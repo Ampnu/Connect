@@ -35,13 +35,15 @@ namespace SpaConnect.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         OPN = c.String(),
                         opTitle = c.String(),
-                        opRev = c.String(),
+                        lessonPlan = c.String(),
+                        tools = c.String(),
+                        generalNotes = c.String(),
                         asmbID = c.Int(nullable: false),
                         assembly_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Assies", t => t.asmbID)
-                .Index(t => t.asmbID);
+                .ForeignKey("dbo.Assies", t => t.assembly_ID)
+                .Index(t => t.assembly_ID);
             
             CreateTable(
                 "dbo.Steps",
@@ -49,8 +51,6 @@ namespace SpaConnect.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         instructions = c.String(),
-                        timeStart = c.Int(nullable: false),
-                        timeEnd = c.Int(nullable: false),
                         operationID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)

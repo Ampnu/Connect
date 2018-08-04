@@ -29,17 +29,11 @@ namespace SpaConnect.Controllers
         {
             List<Program> programs = _context.programDB.ToList();
 
-          return View(programs);
-        }
-
-        public ActionResult Display()
-        {
-
-            return View();
+            return View(programs);
         }
 
         public ActionResult New()
-        {        
+        {
             return View();
         }
 
@@ -48,6 +42,34 @@ namespace SpaConnect.Controllers
         {
             _context.programDB.Add(program); //adding object to the database
             _context.SaveChanges();
+            return RedirectToAction("Index", "Program");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            Program programToEdit = _context.programDB.SingleOrDefault(m=>m.ID==id);
+
+            if(programToEdit.programName == null)
+            {
+                return HttpNotFound();
+            }
+            return View(programToEdit);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Program program)
+        {
+            if(program.ID == 0)
+            {
+                _context.programDB.Add(program); //adding object to the database
+            }
+            else
+            {
+                var programInDB = _context.programDB.SingleOrDefault(m => m.ID == program.ID);
+                programInDB.programName = program.programName;
+            }
+            _context.SaveChanges();
+
             return RedirectToAction("Index", "Program");
         }
     }

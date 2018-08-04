@@ -32,8 +32,8 @@
                 <td>@val.OPN</td>
                 <td>@Html.ActionLink(val.opTitle, "Index", "Step", new { id = val.ID }, null)</td>
                 <td>
-                    @Html.ActionLink("New", "New", "Operation", new { id = val.asmbID }, null)
-                    @Html.ActionLink("Edit", "Result", "Operation", new { id = val.asmbID }, null)
+                    @Html.ActionLink("New", "New", "Operation", new { id = val.asmbID }, null) |
+                    @Html.ActionLink("Edit", "Result", "Operation", new { id = val.asmbID }, null) |
                     @Html.ActionLink("Delete", "Result", "Operation", new { id = val.asmbID }, null)
                 </td>
             </tr>
