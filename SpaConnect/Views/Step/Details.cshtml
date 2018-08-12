@@ -1,15 +1,5 @@
 ﻿@*@model IEnumerable<SpaConnect.Models.Step>*@
 @model SpaConnect.ViewModels.NewAssetVM
-@*
-    Note: I've set the model for this view to IEnumerable<Customer>.
-    This is a simple interface implemented by the list class. Since
-    in this view we only want to iterate over this list, and we don't
-    need any of the operations in the List class (eg Add, Remove, etc),
-    it's better to use the IEnumerable interface, which allows use to
-    iterate over the list. If in the future, we replace the List with a
-    different data structure, as long as it is enumerable, our view code
-    will remain unchanged.
-*@
 
 @{
     ViewBag.Title = "INSTRUCTIONS";
@@ -26,14 +16,18 @@
     <thead>
         <tr>
             <th>LESSON PLAN</th>
+            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var val in Model.utilIDVM)
         {
-            <tr>
-                <td>@val.lessonPlan</td>
-            </tr>
+        <tr>
+            <td>@val.lessonPlan</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit2", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -42,14 +36,18 @@
     <thead>
         <tr>
             <th>TOOLS/EQUIPMENT</th>
+            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var val in Model.utilIDVM)
         {
-            <tr>
-                <td>@val.tools</td>
-            </tr>
+        <tr>
+            <td>@val.tools</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit2", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -58,14 +56,18 @@
     <thead>
         <tr>
             <th>GENERAL NOTES</th>
+            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var val in Model.utilIDVM)
         {
-            <tr>
-                <td>@val.generalNotes</td>
-            </tr>
+        <tr>
+            <td>@val.generalNotes</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit2", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -75,16 +77,22 @@
         <tr>
             <th>STEP</th>
             <th>INSTRUCTION</th>
+            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var val in Model.stepIDVM)
         {
             numb = numb+1;
-            <tr>
-                <td>@numb</td>
-                <td>@val.instructions</td>
-            </tr>
+        <tr>
+            <td>@numb</td>
+            <td>@val.instructions</td>
+            <td>
+                @Html.ActionLink("New", "New", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Edit", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Delete", "Result", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>

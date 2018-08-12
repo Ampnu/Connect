@@ -56,6 +56,34 @@ namespace SpaConnect.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Edit1(int id)
+        {
+            Operation opToEdit = _context.operationDB.SingleOrDefault(m => m.ID == id);
+            List<Assy> asmbID = _context.assyDB.Where(m => m.ID == opToEdit.asmbID).ToList(); //retriving program for the DB
+
+            var viewModel = new NewAssetVM
+            {
+                opVM = opToEdit,
+                asmbIDVM = asmbID
+            };
+
+            return View(viewModel);
+        }
+
+        public ActionResult Edit2(int id)
+        {
+            Operation opToEdit = _context.operationDB.SingleOrDefault(m => m.ID == id);
+            List<Assy> asmbID = _context.assyDB.Where(m => m.ID == opToEdit.asmbID).ToList(); //retriving program for the DB
+
+            var viewModel = new NewAssetVM
+            {
+                opVM = opToEdit,
+                asmbIDVM = asmbID
+            };
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Create(NewAssetVM op)
         {
@@ -64,10 +92,25 @@ namespace SpaConnect.Controllers
             return RedirectToAction("Details", "Operation", new { id = op.opVM.asmbID });
         }
 
-        public ActionResult Result()
+        [HttpPost]
+        public ActionResult Update(NewAssetVM op)
         {
+            if (op.opVM.ID == 0)
+            {
+                _context.operationDB.Add(op.opVM); //adding object to the database
+            }
+            else
+            {
+                var opInDB = _context.operationDB.SingleOrDefault(m => m.ID == op.opVM.ID);
+                opInDB.OPN = op.opVM.OPN;
+                opInDB.opTitle = op.opVM.opTitle;
+                opInDB.lessonPlan = op.opVM.lessonPlan;
+                opInDB.tools = op.opVM.tools;
+                opInDB.generalNotes = op.opVM.generalNotes;
+            }
+            _context.SaveChanges();
 
-            return View();
+            return RedirectToAction("Details", "Operation", new { id = op.opVM.asmbID });
         }
     }
 }

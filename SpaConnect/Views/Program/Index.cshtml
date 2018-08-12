@@ -24,6 +24,7 @@
         <tr>
             <td>@Html.ActionLink(val.programName, "Index", "Assembly", new { id = val.ID }, null)</td>
             <td>
+                @Html.ActionLink("New", "New", "Program", new { @class = "btn btn-primary btn-xs" })
                 @Html.ActionLink("Edit", "Edit", "Program", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                 @Html.ActionLink("Delete", "Result", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
             </td>
@@ -32,7 +33,7 @@
     </tbody>
 </table>
 
-<div>@Html.ActionLink("Add New Program", "New", "Program", new { @class = "btn btn-primary" })</div>
+@*<div>@Html.ActionLink("Add New Program", "New", "Program", new { @class = "btn btn-primary" })</div>*@
 
 
 

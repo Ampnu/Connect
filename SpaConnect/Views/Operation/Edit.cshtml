@@ -2,36 +2,36 @@
 @model SpaConnect.ViewModels.NewAssetVM
 @{
 
-    ViewBag.Title = "New";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create New Operation</h2>
+<h2>Edit Operation</h2>
 
-@using (Html.BeginForm("Create", "Operation"))
+@using (Html.BeginForm("Update", "Operation"))
 {
     <div class="form-group">
-        <label for="OPN">New OPN</label>
+        <label for="OPN">Edit OPN</label>
         @Html.TextAreaFor(m => m.opVM.OPN, new { @class = "form-control" }) @*sets OPN number*@
     </div>
 
     <div class="form-group">
-        <label for="opTitle">New OPN Title</label>
+        <label for="opTitle">Edit OPN Title</label>
         @Html.TextAreaFor(m => m.opVM.opTitle, new { @class = "form-control" }) @*sets OPN title*@
     </div>
 
     <div class="form-group">
-        <label for="lessonPlan">Add Lesson Plans</label>
+        <label for="lessonPlan">Edit Lesson Plans</label>
         @Html.TextAreaFor(m => m.opVM.lessonPlan, new { @class = "form-control" }) @*sets OPN title*@
     </div>
 
     <div class="form-group">
-        <label for="tools">Add Tools/Equiptment</label>
+        <label for="tools">Edit Tools/Equiptment</label>
         @Html.TextAreaFor(m => m.opVM.tools, new { @class = "form-control" }) @*sets OPN title*@
     </div>
 
     <div class="form-group">
-        <label for="generalNotes">Add General Notes</label>
+        <label for="generalNotes">Edit General Notes</label>
         @Html.TextAreaFor(m => m.opVM.generalNotes, new { @class = "form-control" }) @*sets OPN title*@
     </div>
 
@@ -41,4 +41,3 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-}

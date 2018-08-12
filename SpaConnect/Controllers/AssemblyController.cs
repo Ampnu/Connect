@@ -56,13 +56,43 @@ namespace SpaConnect.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Edit(int id)
+        {
+            Assy asmbToEdit = _context.assyDB.SingleOrDefault(m => m.ID == id);
+            List<Program> programID = _context.programDB.Where(m=>m.ID == asmbToEdit.programID).ToList(); //retriving program for the DB
+
+            var viewModel = new NewAssetVM
+            {
+                asmbVM = asmbToEdit,
+                programsIDVM = programID //storing the list in the a new program list
+            };
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Create(NewAssetVM asmb)
         {
             _context.assyDB.Add(asmb.asmbVM); //adding object to the database
             _context.SaveChanges();
             return RedirectToAction("Details", "Assembly", new { id = asmb.asmbVM.programID });
-            //return RedirectToAction("Index", "Program");
+        }
+
+        [HttpPost]
+        public ActionResult Update(NewAssetVM asmb)
+        {
+            if (asmb.asmbVM.ID == 0)
+            {
+                _context.assyDB.Add(asmb.asmbVM); //adding object to the database
+            }
+            else
+            {
+                var asmbInDB = _context.assyDB.SingleOrDefault(m => m.ID == asmb.asmbVM.ID);
+                asmbInDB.assyName = asmb.asmbVM.assyName;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Details", "Assembly", new { id = asmb.asmbVM.programID });
         }
     }
 }

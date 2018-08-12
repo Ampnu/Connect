@@ -62,6 +62,20 @@ namespace SpaConnect.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Edit(int id)
+        {
+            Step stepToEdit = _context.stepDB.SingleOrDefault(m => m.ID == id);
+            List<Operation> opID = _context.operationDB.Where(m => m.ID == stepToEdit.ID).ToList(); //retriving program for the DB
+
+            var viewModel = new NewAssetVM
+            {
+                stepVM = stepToEdit,
+                opsIDVM = opID
+            };
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Create(NewAssetVM step)
         {
@@ -70,10 +84,21 @@ namespace SpaConnect.Controllers
             return RedirectToAction("Details", "Step", new { id = step.stepVM.operationID });
         }
 
-        public ActionResult Result()
+        [HttpPost]
+        public ActionResult Update(NewAssetVM step)
         {
+            if (step.stepVM.ID == 0)
+            {
+                _context.stepDB.Add(step.stepVM); //adding object to the database
+            }
+            else
+            {
+                var stepInDB = _context.stepDB.SingleOrDefault(m => m.ID == step.stepVM.ID);
+                stepInDB.instructions = step.stepVM.instructions;
+            }
+            _context.SaveChanges();
 
-            return View();
+            return RedirectToAction("Details", "Step", new { id = step.stepVM.operationID });
         }
     }
 }
