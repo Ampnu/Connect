@@ -56,7 +56,7 @@ namespace SpaConnect.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Edit1(int id)
+        public ActionResult Edit(int id)
         {
             Operation opToEdit = _context.operationDB.SingleOrDefault(m => m.ID == id);
             List<Assy> asmbID = _context.assyDB.Where(m => m.ID == opToEdit.asmbID).ToList(); //retriving program for the DB
@@ -70,19 +70,19 @@ namespace SpaConnect.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Edit2(int id)
-        {
-            Operation opToEdit = _context.operationDB.SingleOrDefault(m => m.ID == id);
-            List<Assy> asmbID = _context.assyDB.Where(m => m.ID == opToEdit.asmbID).ToList(); //retriving program for the DB
+        //public ActionResult Edit2(int id)
+        //{
+        //    Operation opToEdit = _context.operationDB.SingleOrDefault(m => m.ID == id);
+        //    List<Assy> asmbID = _context.assyDB.Where(m => m.ID == opToEdit.asmbID).ToList(); //retriving program for the DB
 
-            var viewModel = new NewAssetVM
-            {
-                opVM = opToEdit,
-                asmbIDVM = asmbID
-            };
+        //    var viewModel = new NewAssetVM
+        //    {
+        //        opVM = opToEdit,
+        //        asmbIDVM = asmbID
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
         [HttpPost]
         public ActionResult Create(NewAssetVM op)

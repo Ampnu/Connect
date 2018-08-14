@@ -40,4 +40,7 @@
         @Html.DropDownListFor(m => m.opVM.asmbID, new SelectList(Model.asmbIDVM, "ID", "assyName"), "Select Assembly", new { @class = "form-control" })
     </div>
 
+    @Html.HiddenFor(m => m.opVM.ID);
+
     <button type="submit" class="btn btn-primary">Submit</button>
+}

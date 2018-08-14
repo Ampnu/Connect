@@ -16,7 +16,6 @@
     <thead>
         <tr>
             <th>LESSON PLAN</th>
-            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
@@ -24,9 +23,6 @@
         {
         <tr>
             <td>@val.lessonPlan</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit2", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-            </td>
         </tr>
         }
     </tbody>
@@ -36,7 +32,6 @@
     <thead>
         <tr>
             <th>TOOLS/EQUIPMENT</th>
-            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
@@ -44,9 +39,6 @@
         {
         <tr>
             <td>@val.tools</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit2", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-            </td>
         </tr>
         }
     </tbody>
@@ -56,7 +48,6 @@
     <thead>
         <tr>
             <th>GENERAL NOTES</th>
-            <th>MODIFY</th>
         </tr>
     </thead>
     <tbody>
@@ -64,9 +55,6 @@
         {
         <tr>
             <td>@val.generalNotes</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit2", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-            </td>
         </tr>
         }
     </tbody>
