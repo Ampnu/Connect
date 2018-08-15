@@ -235,10 +235,9 @@
     <Content Include="Views\Program\Edit.cshtml" />
     <Content Include="Views\Assembly\Index.cshtml" />
     <Content Include="Views\Assembly\Edit.cshtml" />
-    <Content Include="Views\Operation\Edit1.cshtml" />
-    <Content Include="Views\Operation\Edit2.cshtml" />
     <Content Include="Views\Operation\Edit.cshtml" />
     <Content Include="Views\Step\Edit.cshtml" />
+    <Content Include="Views\Program\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

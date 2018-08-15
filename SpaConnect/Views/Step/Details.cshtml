@@ -74,8 +74,8 @@
             numb = numb+1;
         <tr>
             <td>@numb</td>
-            <td>@val.instructions</td>
-            <td>
+            <td class="col-lg-10">@val.instructions</td>
+            <td class="col-sm-2">
                 @Html.ActionLink("New", "New", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                 @Html.ActionLink("Edit", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                 @Html.ActionLink("Delete", "Result", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
