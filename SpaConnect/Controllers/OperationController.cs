@@ -70,19 +70,6 @@ namespace SpaConnect.Controllers
             return View(viewModel);
         }
 
-        //public ActionResult Edit2(int id)
-        //{
-        //    Operation opToEdit = _context.operationDB.SingleOrDefault(m => m.ID == id);
-        //    List<Assy> asmbID = _context.assyDB.Where(m => m.ID == opToEdit.asmbID).ToList(); //retriving program for the DB
-
-        //    var viewModel = new NewAssetVM
-        //    {
-        //        opVM = opToEdit,
-        //        asmbIDVM = asmbID
-        //    };
-
-        //    return View(viewModel);
-        //}
 
         [HttpPost]
         public ActionResult Create(NewAssetVM op)
@@ -111,6 +98,23 @@ namespace SpaConnect.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Details", "Operation", new { id = op.opVM.asmbID });
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Operation opToDelete = _context.operationDB.SingleOrDefault(m => m.ID == id);
+
+            return View(opToDelete);
+        }
+
+        [HttpPost]
+        public ActionResult Remove(int id)
+        {
+            Operation opToDelete = _context.operationDB.SingleOrDefault(m => m.ID == id);
+            _context.operationDB.Remove(opToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("Details", "Operation", new { id = opToDelete.asmbID });
         }
     }
 }

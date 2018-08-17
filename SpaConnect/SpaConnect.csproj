@@ -227,7 +227,6 @@
     <Content Include="Views\Step\Details.cshtml" />
     <Content Include="Views\Assembly\New.cshtml" />
     <Content Include="Views\Program\New.cshtml" />
-    <Content Include="Views\Operation\Result.cshtml" />
     <Content Include="Views\Operation\Index.cshtml" />
     <Content Include="Views\Operation\New.cshtml" />
     <Content Include="Views\Step\Index.cshtml" />
@@ -238,6 +237,8 @@
     <Content Include="Views\Operation\Edit.cshtml" />
     <Content Include="Views\Step\Edit.cshtml" />
     <Content Include="Views\Program\Delete.cshtml" />
+    <Content Include="Views\Assembly\Delete.cshtml" />
+    <Content Include="Views\Operation\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

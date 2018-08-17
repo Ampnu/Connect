@@ -80,5 +80,14 @@ namespace SpaConnect.Controllers
 
             return View(programToDelete);
         }
+
+        [HttpPost]
+        public ActionResult Remove(int id)
+        {
+            Program programToDelete = _context.programDB.SingleOrDefault(m => m.ID == id);
+            _context.programDB.Remove(programToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Program");
+        }
     }
 }

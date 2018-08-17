@@ -22,9 +22,9 @@
                 <td>@val.OPN</td>
                 <td class="col-lg-10">@Html.ActionLink(val.opTitle, "Index", "Step", new { id = val.ID }, null)</td>
                 <td class="col-lg-2">
-                    @Html.ActionLink("New", "New", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("New", "New", "Operation", new { id = val.asmbID }, new { @class = "btn btn-primary btn-xs" })
                     @Html.ActionLink("Edit", "Edit", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-                    @Html.ActionLink("Delete", "Result", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Delete", "Delete", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                 </td>
             </tr>
         }

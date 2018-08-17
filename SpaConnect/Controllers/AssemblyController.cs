@@ -44,7 +44,7 @@ namespace SpaConnect.Controllers
             return View(assy);
         }
 
-        public ActionResult New(int id)
+        public ActionResult New(int id) 
         {
             List<Program> programID = _context.programDB.Where(m=>m.ID == id).ToList(); //retriving program for the DB
 
@@ -93,6 +93,23 @@ namespace SpaConnect.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Details", "Assembly", new { id = asmb.asmbVM.programID });
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Assy asmbToDelete = _context.assyDB.SingleOrDefault(m => m.ID == id);
+
+            return View(asmbToDelete);
+        }
+
+        [HttpPost]
+        public ActionResult Remove(int id)
+        {
+            Assy asmbToDelete = _context.assyDB.SingleOrDefault(m => m.ID == id);
+            _context.assyDB.Remove(asmbToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("Details", "Assembly", new { id = asmbToDelete.programID});
         }
     }
 }
