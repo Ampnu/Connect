@@ -44,7 +44,7 @@ namespace SpaConnect.Controllers
             NewAssetVM assetVM = new NewAssetVM
             {
                 stepIDVM = step,
-                utilIDVM = ulitiesID
+                utilIDVM = ulitiesID //Tool List, Notes and Lesson Plans
             };
 
             return View(assetVM);
@@ -65,7 +65,7 @@ namespace SpaConnect.Controllers
         public ActionResult Edit(int id)
         {
             Step stepToEdit = _context.stepDB.SingleOrDefault(m => m.ID == id);
-            List<Operation> opID = _context.operationDB.Where(m => m.ID == stepToEdit.ID).ToList(); //retriving program for the DB
+            List<Operation> opID = _context.operationDB.Where(m => m.ID == stepToEdit.operationID).ToList(); //retriving program for the DB
 
             var viewModel = new NewAssetVM
             {
@@ -99,6 +99,23 @@ namespace SpaConnect.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Details", "Step", new { id = step.stepVM.operationID });
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Step stepToDelete = _context.stepDB.SingleOrDefault(m => m.ID == id);
+
+            return View(stepToDelete);
+        }
+
+        [HttpPost]
+        public ActionResult Remove(int id)
+        {
+            Step stepToDelete = _context.stepDB.SingleOrDefault(m => m.ID == id);
+            _context.stepDB.Remove(stepToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("Details", "Step", new { id = stepToDelete.operationID });
         }
     }
 }

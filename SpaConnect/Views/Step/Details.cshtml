@@ -21,9 +21,9 @@
     <tbody>
         @foreach (var val in Model.utilIDVM)
         {
-        <tr>
-            <td>@val.lessonPlan</td>
-        </tr>
+            <tr>
+                <td>@val.lessonPlan</td>
+            </tr>
         }
     </tbody>
 </table>
@@ -37,9 +37,9 @@
     <tbody>
         @foreach (var val in Model.utilIDVM)
         {
-        <tr>
-            <td>@val.tools</td>
-        </tr>
+            <tr>
+                <td>@val.tools</td>
+            </tr>
         }
     </tbody>
 </table>
@@ -53,9 +53,9 @@
     <tbody>
         @foreach (var val in Model.utilIDVM)
         {
-        <tr>
-            <td>@val.generalNotes</td>
-        </tr>
+            <tr>
+                <td>@val.generalNotes</td>
+            </tr>
         }
     </tbody>
 </table>
@@ -71,16 +71,16 @@
     <tbody>
         @foreach (var val in Model.stepIDVM)
         {
-            numb = numb+1;
-        <tr>
-            <td>@numb</td>
-            <td class="col-lg-10">@val.instructions</td>
-            <td class="col-sm-2">
-                @Html.ActionLink("New", "New", "Step", new { id = val.operationID }, new { @class = "btn btn-primary btn-xs" })
-                @Html.ActionLink("Edit", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-                @Html.ActionLink("Delete", "Result", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-            </td>
-        </tr>
+            numb = numb + 1;
+            <tr>
+                <td>@numb</td>
+                <td class="col-lg-10">@val.instructions</td>
+                <td class="col-sm-2">
+                    @Html.ActionLink("New", "New", "Step", new { id = val.operationID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Edit", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Delete", "Delete", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                </td>
+            </tr>
         }
     </tbody>
 </table>

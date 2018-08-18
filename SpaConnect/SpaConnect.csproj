@@ -239,6 +239,7 @@
     <Content Include="Views\Program\Delete.cshtml" />
     <Content Include="Views\Assembly\Delete.cshtml" />
     <Content Include="Views\Operation\Delete.cshtml" />
+    <Content Include="Views\Step\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
