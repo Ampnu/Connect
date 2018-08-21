@@ -14,9 +14,6 @@ namespace SpaConnect.ViewModels
         public IEnumerable<Assy> asmbIDVM { get; set; } //list from the DB
         public Operation opVM { get; set; } //access to operation model variables
 
-        public IEnumerable<Step> stepIDVM { get; set; } //list from the DB
-        public IEnumerable<Operation> utilIDVM { get; set; } //list from the DB
-
         public IEnumerable<Operation> opsIDVM { get; set; } //list from the DB
         public Step stepVM { get; set; } //access to operation step variables
     }

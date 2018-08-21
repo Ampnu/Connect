@@ -39,12 +39,39 @@ namespace SpaConnect.Controllers
         public ActionResult Details(int id)
         {
             List<Step> step = _context.stepDB.Where(a => a.operationID == id).ToList();
-            List<Operation> ulitiesID = _context.operationDB.Where(a => a.ID == id).ToList();
+            List<Operation> ulities = _context.operationDB.Where(a => a.ID == id).ToList();
+            List<string> lessonsInDB = new List<string>();
+            List<string> toolsInDB = new List<string>();
+            List<string> notesInDB = new List<string>();
 
-            NewAssetVM assetVM = new NewAssetVM
+            foreach (var m in ulities)
+            {
+                string[] plans = m.lessonPlan.Split(new Char[] { ',' });
+                string[] tools = m.tools.Split(new Char[] { ',' });
+                string[] notes = m.generalNotes.Split(new Char[] { '|' });
+
+                foreach (var p in plans)
+                {
+                    lessonsInDB.Add(p.ToUpper());
+                }
+
+                foreach (var t in tools)
+                {
+                    toolsInDB.Add(t.ToUpper());
+                }
+
+                foreach (var n in notes)
+                {
+                    notesInDB.Add(n.ToUpper());
+                }
+            }        
+            StepVM assetVM = new StepVM
             {
                 stepIDVM = step,
-                utilIDVM = ulitiesID //Tool List, Notes and Lesson Plans
+                utilIDVM = ulities, //Tool List, Notes
+                LessonPlans = lessonsInDB,
+                ToolsList = toolsInDB,
+                GeneralNotes = notesInDB
             };
 
             return View(assetVM);
@@ -95,6 +122,7 @@ namespace SpaConnect.Controllers
             {
                 var stepInDB = _context.stepDB.SingleOrDefault(m => m.ID == step.stepVM.ID);
                 stepInDB.instructions = step.stepVM.instructions;
+                stepInDB.editStatus = true;
             }
             _context.SaveChanges();
 
@@ -116,6 +144,20 @@ namespace SpaConnect.Controllers
             _context.stepDB.Remove(stepToDelete);
             _context.SaveChanges();
             return RedirectToAction("Details", "Step", new { id = stepToDelete.operationID });
+        }
+
+        public JsonResult DataExport(int id)
+        {
+            List<Step> step = _context.stepDB.Where(a => a.operationID == id).ToList();
+            List<Operation> ulitiesID = _context.operationDB.Where(a => a.ID == id).ToList();
+
+            StepVM assetVM = new StepVM
+            {
+                stepIDVM = step,
+                utilIDVM = ulitiesID //Tool List, Notes and Lesson Plans
+            };
+
+            return Json(assetVM,JsonRequestBehavior.AllowGet);
         }
     }
 }

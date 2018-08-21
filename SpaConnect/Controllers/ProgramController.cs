@@ -24,7 +24,6 @@ namespace SpaConnect.Controllers
             _context.Dispose();
         }
 
-        // GET: Program
         public ActionResult Index()
         {
             List<Program> programs = _context.programDB.ToList();
@@ -40,8 +39,14 @@ namespace SpaConnect.Controllers
         [HttpPost]
         public ActionResult Create(Program program)
         {
-            _context.programDB.Add(program); //adding object to the database
+            //Format program name to all uppercase
+            Program newProgram = new Program();
+            newProgram.programName = program.programName.ToUpper();
+
+            //Add new program to database
+            _context.programDB.Add(newProgram); 
             _context.SaveChanges();
+
             return RedirectToAction("Index", "Program");
         }
 
@@ -66,7 +71,7 @@ namespace SpaConnect.Controllers
             else
             {
                 var programInDB = _context.programDB.SingleOrDefault(m => m.ID == program.ID);
-                programInDB.programName = program.programName;
+                programInDB.programName = program.programName.ToUpper();
             }
             _context.SaveChanges();
 

@@ -11,6 +11,7 @@ namespace SpaConnect.Models
         [Key]
         public int ID { get; set; }
         public string instructions { get; set; }
+        public bool editStatus { get; set; }
 
 
         //nav property//

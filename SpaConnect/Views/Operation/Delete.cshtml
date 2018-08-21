@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Delete Operation</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to delete this operation?</h3>
 <div>
     <div>
-        <h4>OPN @Html.DisplayFor(model => model.OPN)  @Html.DisplayFor(model => model.opTitle)</h4>
+        <h4 style="color:blue">OPN @Html.DisplayFor(model => model.OPN)  @Html.DisplayFor(model => model.opTitle)</h4><br />
     </div>
 
     @using (Html.BeginForm("Remove", "Operation"))

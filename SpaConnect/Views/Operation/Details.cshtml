@@ -7,6 +7,8 @@
 
 <h2>OPERATIONS</h2>
 
+@*---------------------------------------LIST OF OPERATIONS--------------------------------------------*@
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -22,7 +24,6 @@
                 <td>@val.OPN</td>
                 <td class="col-lg-10">@Html.ActionLink(val.opTitle, "Index", "Step", new { id = val.ID }, null)</td>
                 <td class="col-lg-2">
-                    @Html.ActionLink("New", "New", "Operation", new { id = val.asmbID }, new { @class = "btn btn-primary btn-xs" })
                     @Html.ActionLink("Edit", "Edit", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                     @Html.ActionLink("Delete", "Delete", "Operation", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                 </td>
@@ -30,6 +31,11 @@
         }
     </tbody>
 </table>
+
+@*---------------------------------------NAVIGATION BUTTONS----------------------------------------------*@
+
+@Html.ActionLink("ADD NEW OPERATION", "New", "Operation", new { id = Model.First().asmbID }, new { @class = "btn btn-primary btn" })
+@Html.ActionLink("BACK TO ASSEMBLIES", "Details", "Assembly", new { id = Model.First().asmbID }, new { @class = "btn btn-primary btn" })
 
 
 

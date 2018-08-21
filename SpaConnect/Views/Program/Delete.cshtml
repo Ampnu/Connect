@@ -7,10 +7,10 @@
 
 <h2>Delete Program</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to delete this program?</h3>
 <div>
     <div>
-        <h4>@Html.DisplayFor(model => model.programName)</h4>
+        <h4 style="color:blue">@Html.DisplayFor(model => model.programName)</h4><br />
     </div>
 
     @using (Html.BeginForm("Remove", "Program"))

@@ -1,64 +1,61 @@
-﻿@*@model IEnumerable<SpaConnect.Models.Step>*@
-@model SpaConnect.ViewModels.NewAssetVM
-
+﻿@model SpaConnect.ViewModels.StepVM
 @{
     ViewBag.Title = "INSTRUCTIONS";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int numb = 0;
 }
 
+@*------------------------------------------PAGE TITLE-------------------------------------------------*@
+
 @foreach (var val in Model.utilIDVM)
 {
-    <h2>OPN @val.OPN @val.opTitle</h2>
+    <br />
+    <h2><bold>OPN @val.OPN @val.opTitle</bold></h2>
+    <br />
 }
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>LESSON PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var val in Model.utilIDVM)
-        {
-            <tr>
-                <td>@val.lessonPlan</td>
-            </tr>
-        }
-    </tbody>
-</table>
+@*------------------------------------------LESSON PLAN------------------------------------------------*@
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>TOOLS/EQUIPMENT</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var val in Model.utilIDVM)
-        {
-            <tr>
-                <td>@val.tools</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<h4 style="color:darkblue"><strong>LESSON PLANS</strong></h4>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>GENERAL NOTES</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var val in Model.utilIDVM)
-        {
-            <tr>
-                <td>@val.generalNotes</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<ul class="list-group">
+    @foreach (var val in Model.LessonPlans)
+    {
+        <li class="list-group-item">
+            @val
+        </li>
+    }
+</ul>
+
+@*--------------------------------------------TOOL LIST------------------------------------------------*@
+
+<h4 style="color:darkblue"><strong>TOOL LIST</strong></h4>
+
+<ul class="list-group">
+    @foreach (var val in Model.ToolsList)
+    {
+        <li class="list-group-item">
+            @val
+        </li>
+    }
+</ul>
+
+@*------------------------------------------GENERAL NOTES----------------------------------------------*@
+
+<h4 style="color:darkblue"><strong>GENERAL NOTES</strong></h4>
+
+<ul class="list-group">
+    @foreach (var val in Model.GeneralNotes)
+    {
+        <li class="list-group-item">
+            @val
+        </li>
+    }
+</ul>
+
+@*------------------------------------------INSTRUCTIONS----------------------------------------------*@
+
+<h4 style="color:darkblue"><strong>INSTRUCTIONS</strong></h4>
 
 <table class="table table-bordered">
     <thead>
@@ -76,12 +73,18 @@
                 <td>@numb</td>
                 <td class="col-lg-10">@val.instructions</td>
                 <td class="col-sm-2">
-                    @Html.ActionLink("New", "New", "Step", new { id = val.operationID }, new { @class = "btn btn-primary btn-xs" })
                     @Html.ActionLink("Edit", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                     @Html.ActionLink("Delete", "Delete", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Data Export", "DataExport", "Step", new { id = val.operationID }, new { @class = "btn btn-primary btn-xs" })
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@*---------------------------------------NAVIGATION BUTTONS----------------------------------------------*@
+
+@Html.ActionLink("ADD NEW STEP", "New", "Step", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn" })
+@Html.ActionLink("BACK TO OPERATIONS", "Details", "Operation", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn" })
+
 

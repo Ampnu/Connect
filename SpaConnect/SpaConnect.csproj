@@ -166,8 +166,13 @@
     <Compile Include="Migrations\201808010259554_InitializeDB.Designer.cs">
       <DependentUpon>201808010259554_InitializeDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808192242297_AddEditStatus.cs" />
+    <Compile Include="Migrations\201808192242297_AddEditStatus.Designer.cs">
+      <DependentUpon>201808192242297_AddEditStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
+    <Compile Include="Models\CMOController.cs" />
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\RouterDBContext.cs" />
@@ -176,6 +181,8 @@
     <Compile Include="ViewModels\EditAssetVM.cs" />
     <Compile Include="ViewModels\NewProgramVM.cs" />
     <Compile Include="ViewModels\NewAssetVM.cs" />
+    <Compile Include="ViewModels\ReleaseCCBVM.cs" />
+    <Compile Include="ViewModels\StepVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-cosmo.css" />
@@ -240,6 +247,8 @@
     <Content Include="Views\Assembly\Delete.cshtml" />
     <Content Include="Views\Operation\Delete.cshtml" />
     <Content Include="Views\Step\Delete.cshtml" />
+    <Content Include="Views\CMO\Index.cshtml" />
+    <Content Include="Views\CMO\Release.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,6 +269,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808010259554_InitializeDB.resx">
       <DependentUpon>201808010259554_InitializeDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808192242297_AddEditStatus.resx">
+      <DependentUpon>201808192242297_AddEditStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
