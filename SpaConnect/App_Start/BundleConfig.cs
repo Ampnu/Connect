@@ -23,7 +23,7 @@ namespace SpaConnect
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-cosmo.css",
+                      "~/Content/bootstrap-connect.css",
                       "~/Content/site.css"));
         }
     }

@@ -9,16 +9,27 @@
 <h2>Edit Step</h2>
 @using (Html.BeginForm("Update", "Step"))
 {
+
+    @*---------------------------------------ADD DP NUMBER--------------------------------------------*@
     <div class="form-group">
-        <label for="Step">Edit Step</label>
-        @Html.TextAreaFor(m => m.stepVM.instructions, new { @class = "form-control" }) @*store new step into DB*@
+        <label for="DP">DP NUMBER</label>
+        @Html.TextAreaFor(m => m.stepVM.DP, new { @class = "form-control" })
     </div>
 
-    @*sets the operation to an assembly from *@
+    @*--------------------------------------EDIT INSTRUCTIONS-----------------------------------------*@
+    <div class="form-group">
+        <label for="Step">Edit Step</label>
+        @Html.TextAreaFor(m => m.stepVM.instructions, new { @class = "form-control" })
+    </div>
+
+    @*---------------------------------------ASSIGN ASSEMBLY------------------------------------------*@
+
     <div class="form-group">
         @Html.DropDownListFor(m => m.stepVM.operationID, new SelectList(Model.opsIDVM, "ID", "opTitle"), "Select Operation", new { @class = "form-control" })
     </div>
-    
+
+    @*-------------------------------------SUBMITS ID BACK TO UPDATE--------------------------------------*@
+
     @Html.HiddenFor(m => m.stepVM.ID);
 
     <button type="submit" class="btn btn-primary">Submit</button>

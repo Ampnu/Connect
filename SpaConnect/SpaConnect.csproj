@@ -170,6 +170,22 @@
     <Compile Include="Migrations\201808192242297_AddEditStatus.Designer.cs">
       <DependentUpon>201808192242297_AddEditStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808300033074_AddingDP.cs" />
+    <Compile Include="Migrations\201808300033074_AddingDP.Designer.cs">
+      <DependentUpon>201808300033074_AddingDP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808300037581_AddingDP1.cs" />
+    <Compile Include="Migrations\201808300037581_AddingDP1.Designer.cs">
+      <DependentUpon>201808300037581_AddingDP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808300041385_AddingDP2.cs" />
+    <Compile Include="Migrations\201808300041385_AddingDP2.Designer.cs">
+      <DependentUpon>201808300041385_AddingDP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809052346086_AddDPtoSteps.cs" />
+    <Compile Include="Migrations\201809052346086_AddDPtoSteps.Designer.cs">
+      <DependentUpon>201809052346086_AddDPtoSteps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assy.cs" />
     <Compile Include="Models\CMOController.cs" />
@@ -185,6 +201,7 @@
     <Compile Include="ViewModels\StepVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-connect.css" />
     <Content Include="Content\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap-readable.css" />
@@ -204,6 +221,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -222,7 +240,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -272,6 +292,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808192242297_AddEditStatus.resx">
       <DependentUpon>201808192242297_AddEditStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808300033074_AddingDP.resx">
+      <DependentUpon>201808300033074_AddingDP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808300037581_AddingDP1.resx">
+      <DependentUpon>201808300037581_AddingDP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808300041385_AddingDP2.resx">
+      <DependentUpon>201808300041385_AddingDP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809052346086_AddDPtoSteps.resx">
+      <DependentUpon>201809052346086_AddDPtoSteps.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -16,6 +16,7 @@ namespace SpaConnect.Models
         public string tools { get; set; }
         public string generalNotes { get; set; }
         public bool editStatus { get; set; }
+        
 
         //nav property//
         public int asmbID { get; set; }

@@ -18,6 +18,8 @@
 
 <h4 style="color:darkblue"><strong>LESSON PLANS</strong></h4>
 
+@Html.ActionLink("Edit Lesson Plans", "Edit", "Operation", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn-xs" })
+
 <ul class="list-group">
     @foreach (var val in Model.LessonPlans)
     {
@@ -27,9 +29,12 @@
     }
 </ul>
 
+
 @*--------------------------------------------TOOL LIST------------------------------------------------*@
 
 <h4 style="color:darkblue"><strong>TOOL LIST</strong></h4>
+
+@Html.ActionLink("Edit Tool List", "Edit", "Operation", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn-xs" })
 
 <ul class="list-group">
     @foreach (var val in Model.ToolsList)
@@ -40,9 +45,12 @@
     }
 </ul>
 
+
 @*------------------------------------------GENERAL NOTES----------------------------------------------*@
 
 <h4 style="color:darkblue"><strong>GENERAL NOTES</strong></h4>
+
+@Html.ActionLink("Edit General Notes", "Edit", "Operation", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn-xs" })
 
 <ul class="list-group">
     @foreach (var val in Model.GeneralNotes)
@@ -73,9 +81,9 @@
                 <td>@numb</td>
                 <td class="col-lg-10">@val.instructions</td>
                 <td class="col-sm-2">
-                    @Html.ActionLink("Edit", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-                    @Html.ActionLink("Delete", "Delete", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-                    @Html.ActionLink("Data Export", "DataExport", "Step", new { id = val.operationID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Edit Step", "Edit", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Delete Step", "Delete", "Step", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @*@Html.ActionLink("Data Export", "DataExport", "Step", new { id = val.operationID }, new { @class = "btn btn-primary btn-xs" })*@
                 </td>
             </tr>
         }
@@ -84,7 +92,7 @@
 
 @*---------------------------------------NAVIGATION BUTTONS----------------------------------------------*@
 
-@Html.ActionLink("ADD NEW STEP", "New", "Step", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn" })
-@Html.ActionLink("BACK TO OPERATIONS", "Details", "Operation", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn" })
+@Html.ActionLink("Add New Step", "New", "Step", new { id = Model.stepIDVM.First().operationID }, new { @class = "btn btn-primary btn" })
+
 
 

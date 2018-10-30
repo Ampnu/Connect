@@ -38,11 +38,12 @@ namespace SpaConnect.Controllers
 
         public ActionResult Details(int id)
         {
-            List<Step> step = _context.stepDB.Where(a => a.operationID == id).ToList();
-            List<Operation> ulities = _context.operationDB.Where(a => a.ID == id).ToList();
             List<string> lessonsInDB = new List<string>();
             List<string> toolsInDB = new List<string>();
             List<string> notesInDB = new List<string>();
+
+            List<Step> step = _context.stepDB.Where(a => a.operationID == id).ToList();
+            List<Operation> ulities = _context.operationDB.Where(a => a.ID == id).ToList();          
 
             foreach (var m in ulities)
             {

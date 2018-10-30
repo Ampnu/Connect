@@ -22,8 +22,8 @@
             <tr>
                 <td class="col-sm-10">@Html.ActionLink(val.assyName, "Index", "Operation", new { id = val.ID }, null)</td>
                 <td class="col-sm-2">
-                    @Html.ActionLink("EDIT", "Edit", "Assembly", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
-                    @Html.ActionLink("DELETE", "Delete", "Assembly", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Edit", "Edit", "Assembly", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
+                    @Html.ActionLink("Delete", "Delete", "Assembly", new { id = val.ID }, new { @class = "btn btn-primary btn-xs" })
                 </td>
             </tr>
         }
@@ -32,6 +32,6 @@
 
 @*---------------------------------------NAVIGATION BUTTONS----------------------------------------------*@
 
-@Html.ActionLink("ADD NEW ASSEMBLY", "New", "Assembly", new { id = Model.First().programID }, new { @class = "btn btn-primary btn" })
-@Html.ActionLink("BACK TO PROGRAMS", "Index", "Program", null, new { @class = "btn btn-primary btn" })
+@Html.ActionLink("Add New Assembly", "New", "Assembly", new { id = Model.First().programID }, new { @class = "btn btn-primary btn" })
+@Html.ActionLink("Back to Programs", "Index", "Program", null, new { @class = "btn btn-primary btn" })
 
